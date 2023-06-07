@@ -1,0 +1,39 @@
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+.navbar-item {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.navbar-item:hover {
+  background-color: #000;
+}
+.cart-icon-wrap {
+  position: relative;
+  cursor: pointer;
+}
+.cart-value {
+  position: absolute;
+  top: -4px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #343333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-icon {
+  font-size: 35px;
+  color: white;
+}
