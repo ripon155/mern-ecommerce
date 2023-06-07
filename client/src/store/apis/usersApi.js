@@ -36,11 +36,21 @@ export const authApi = apiSlice.injectEndpoints({
           };
         },
       }),
+      register: builder.mutation({
+        query: (data) => {
+          console.log(data);
+          return {
+            url: "/user/signup",
+            method: "POST",
+            body: data,
+          };
+        },
+      }),
     };
   },
 });
 
-export const { useLoginMutation } = authApi;
+export const { useLoginMutation, useRegisterMutation } = authApi;
 
 export const { useLoginUserMutation } = usersApi;
 

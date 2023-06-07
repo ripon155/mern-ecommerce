@@ -31,7 +31,7 @@ export {
   useGetProductByIdQuery,
 } from "./apis/productsApi";
 
-export { useLoginUserMutation } from "./apis/usersApi";
+export { useLoginUserMutation, useRegisterMutation } from "./apis/usersApi";
 export {
   useAddReviewMutation,
   useGetReviewByIdQuery,

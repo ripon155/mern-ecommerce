@@ -35,6 +35,12 @@ const gentoken = (id, user, res) => {
 exports.signup = async (req, res) => {
   try {
     const check = await User.find({ email: req.body.email });
+    if (check.length > 0) {
+      res.status(400).json({
+        status: "faild",
+        message: "user already exist",
+      });
+    }
     const newUser = await User.create(req.body);
     const token = jwt.sign({ id: newUser._id }, "secrete", {
       expiresIn: "100d",

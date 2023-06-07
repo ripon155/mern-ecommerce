@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useLoginUserMutation } from "../../store";
+
 import { useLoginMutation } from "../../store/apis/usersApi";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "../../store/slices/authSlice";
@@ -9,10 +9,6 @@ function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  // const { user, token } = useSelector((state) => state.auth);
-  // console.log(user, token);
-
-  // const [loginUser] = useLoginUserMutation();
   const [login, { isSuccess }] = useLoginMutation();
 
   const navigate = useNavigate();
@@ -21,9 +17,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // const data = await loginUser({ email, password });
     const data = await login({ email, password });
-
     dispatch(setCredentials(data));
     if (isSuccess) {
       navigate("/");
