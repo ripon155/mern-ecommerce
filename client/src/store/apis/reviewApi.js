@@ -45,7 +45,6 @@ const reviewApi = createApi({
 
       checkout: builder.mutation({
         query: (cart) => {
-          console.log(cart);
           return {
             url: "/productcheckout/checkout-session",
             method: "POST",
